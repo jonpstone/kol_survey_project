@@ -1,0 +1,27 @@
+<div class="col s12 m6">
+    <%= form_for survey do |f| %>
+
+        <% if survey.errors.any? %>
+            <div class="row">
+                <div class="card red darken-1">
+                    <div class="card-content white-text">
+                        <span class="card-title">Error!</span>
+                        <%= pluralize(survey.errors.count, "error") %> prohibited this survey from being saved:
+                        <ul>
+                            <% survey.errors.full_messages.each do |msg| %>
+                                <li><strong><%= msg %></strong></li>
+                            <% end %><br />
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+
+        <div class="row">
+            <%= f.label :name %><br />
+            <%= f.text_field :name, class: 'form-control' %><br />
+        </div>
+
+        <%= f.submit class: 'btn waves-effect waves-light' %>
+    <% end %>
+</div>

@@ -1,16 +1,25 @@
 <div class="row">
   <div class="col s12 m6">
     <ul class="collection with-header">
-      <li class="collection-header"><h4>Survey Questions</h4></li>
+      <li class="collection-header"><h4><%= "#{@survey.name} Questions" %></h4></li>
       <!-- list survey questions for this survey -->
-      <li class="collection-item">Survey Question 1</li>
+      <% if @survey.survey_questions.exists? %>
+        <% @survey.survey_questions.each do |question| %>
+          <li class="collection-item">
+            <%= link_to question.question_text, 
+                        edit_survey_survey_question_path(id: question.id) %>
+          </li>
+        <% end %>
+      <% else %>
+        <li class="collection-item">Currently no questions added</li>
+      <% end %>
     </ul>
 
     <div class="row">
       <div class="col s12 m6">
-        <%# <%= link_to('Create Question',
-                    new_survey_survey_question_path(),
-                    class: "btn waves-effect waves-light") %> %>
+        <%= link_to('Create Question',
+                    new_survey_survey_question_path(@survey),
+                    class: "btn waves-effect waves-light") %>
       </div>
     </div>
   </div>

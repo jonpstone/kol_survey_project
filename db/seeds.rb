@@ -1,7 +1,11 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Survey.create!([
+    {name: 'survey1'}, 
+    {name: 'survey2', dute_date: DateTime.strptime("09/01/2020", "%m/%d/%Y")}
+])
+
+SurveyQuestion.create!([
+    {question_text: 'How do you feel today?', fixed_question: false, survey_id: 1},
+    {question_text: 'Would you like some coffee?', fixed_question: false, survey_id: 1},
+    {question_text: 'How did we do today?', fixed_question: true, survey_id: 2},
+    {question_text: 'How could we improve?', fixed_question: true, survey_id: 2}
+])

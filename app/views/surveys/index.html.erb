@@ -3,7 +3,12 @@
     <ul class="collection with-header">
       <li class="collection-header"><h4>Surveys</h4></li>
       <!-- list surveys -->
-      <li class="collection-item">Survey 1</li>
+      <% @surveys.ordered.each do |survey| %>
+        <li class="collection-item">
+          <%= link_to survey.name, 
+              survey_survey_questions_path(survey.id) %><br />
+        </li>
+      <% end %>
     </ul>
 
     <div class="row">

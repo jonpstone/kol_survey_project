@@ -1,0 +1,28 @@
+<div class="col s12 m6">
+    <%= form_for([@survey, survey_question]) do |f| %>
+
+        <% if survey_question.errors.any? %>
+            <div id="error_explanation">
+                <h2>
+                    <%= pluralize(survey_question.errors.count, "error") %> 
+                    prohibited this survey_question from being saved:
+                </h2>
+
+                <ul>
+                    <% survey_question.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                    <% end %>
+                </ul>
+            </div>
+        <% end %>
+
+        <%= f.label :question_text %>
+        <%= f.text_field :question_text, class: 'form-control' %>
+        <%= f.hidden_field :survey_id, value: @survey.id %>
+        <p>
+            <%= f.check_box :fixed_question, type: 'checkbox', class: 'filled-in' %>
+            <%= f.label :fixed_question %>
+        </p>
+        <%= f.submit class: 'btn waves-effect waves-light' %>
+    <% end %>
+</div>
