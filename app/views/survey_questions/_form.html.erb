@@ -18,13 +18,19 @@
             </div>
         <% end %>
 
-        <%= f.label :question_text %>
-        <%= f.text_field :question_text, class: 'form-control' %>
-        <%= f.hidden_field :survey_id, value: @survey.id %>
-        <p>
-            <%= f.check_box :fixed_question, type: 'checkbox', class: 'filled-in' %>
-            <%= f.label :fixed_question %>
-        </p>
+        <section>
+            <%= f.label :question_text %>
+            <%= f.text_field :question_text, class: 'form-control' %>
+            <%= f.hidden_field :survey_id, value: @survey.id %>
+        </section>
+
+        <section>
+            <label>
+                <%= f.check_box :fixed_question, class: 'filled-in' %>
+                <span>Fixed Question?</span>
+            </label><br />
+        </section>
+
         <%= f.submit class: 'btn waves-effect waves-light' %>
     <% end %>
 </div>
