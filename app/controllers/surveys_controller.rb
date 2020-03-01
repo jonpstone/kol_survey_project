@@ -12,7 +12,7 @@ class SurveysController < ApplicationController
 	def create
 		@survey = Survey.new(survey_params)
 		if @survey.save
-			redirect_to survey_survey_questions_path(@survey.id)
+			redirect_to survey_survey_questions_path(@survey)
 		else
 			render :new
 		end
@@ -22,7 +22,7 @@ class SurveysController < ApplicationController
 
 	def update
 		if @survey.update(survey_params)
-			redirect_to @survey
+			redirect_to surveys_path
 		else
 			render :edit
 		end

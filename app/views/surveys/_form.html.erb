@@ -6,7 +6,8 @@
                 <div class="card red darken-1">
                     <div class="card-content white-text">
                         <span class="card-title">Error!</span>
-                        <%= pluralize(survey.errors.count, "error") %> prohibited this survey from being saved:
+                        <%= pluralize(survey.errors.count, "error") %>
+                        prohibited this survey from being saved:
                         <ul>
                             <% survey.errors.full_messages.each do |msg| %>
                                 <li><strong><%= msg %></strong></li>
