@@ -22,7 +22,9 @@
             <div class="row">
                 <%= f.label :name %><br />
                 <%= f.text_field :name, class: 'form-control' %>
-                <%= f.select_date Date.today, prefix: :dute_date %>
+                <%= f.label :due_date , "Due date (Please enter date as yyyymmdd)" %>
+                <%= f.number_field :due_date %>
+                <br />
             </div>
         </section>
 

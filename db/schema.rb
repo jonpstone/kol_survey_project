@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2020_03_02_063307) do
 
   create_table "surveys", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
-    t.datetime "dute_date"
+    t.integer "due_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

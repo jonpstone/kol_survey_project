@@ -10,9 +10,12 @@
 						survey_survey_questions_path(survey),
 						class: "survey-name"
 					%>
+					<% if survey.due_date? %>
+						Due date: <%= survey.month %>/<%= survey.day %>/<%= survey.year %>
+					<% end %>
 					<%= 
 						link_to(
-							'Change Name', 
+							'Edit', 
 							edit_survey_path(survey),
 							class: "btn-small waves-effect waves-light"
 						) 

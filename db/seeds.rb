@@ -1,6 +1,6 @@
 Survey.create!([
     {name: 'survey1'}, 
-    {name: 'survey2', dute_date: DateTime.strptime("09/01/2020", "%m/%d/%Y")}
+    {name: 'survey2', due_date: 20200901}
 ])
 
 SurveyQuestion.create!([
