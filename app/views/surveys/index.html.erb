@@ -5,19 +5,30 @@
 			<!-- list surveys -->
 			<% @surveys.ordered.each do |survey| %>
 				<li class="collection-item">
-					<%= link_to survey.name, 
-							survey_survey_questions_path(survey)
-					%> | 
-					<%= link_to "EDIT", edit_survey_path(survey) %><br />
+					<%= 
+						link_to survey.name, 
+						survey_survey_questions_path(survey),
+						class: "survey-name"
+					%>
+					<%= 
+						link_to(
+							'Change Name', 
+							edit_survey_path(survey),
+							class: "btn-small waves-effect waves-light"
+						) 
+					%>
+					<br />
 				</li>
 			<% end %>
 		</ul>
 
 		<div class="row">
 			<div class="col s12 m6">
-				<%= link_to('Create Survey',
+				<%= 
+					link_to(
+						'Create Survey',
 						new_survey_path,
-						class: "btn waves-effect waves-light"
+						class: "btn-large waves-effect waves-light"
 					)
 				%>
 			</div>

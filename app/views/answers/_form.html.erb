@@ -1,15 +1,15 @@
 <div class="col s12 m6">
-    <%= form_for survey do |f| %>
+    <%= form_for([@survey_question, answer]) do |f| %>
 
-        <% if survey.errors.any? %>
+        <% if answer.errors.any? %>
             <div class="row">
                 <div class="card red darken-1">
                     <div class="card-content white-text">
                         <span class="card-title">Error!</span>
-                        <%= pluralize(survey.errors.count, "error") %>
-                        prohibited this survey from being saved:
+                        <%= pluralize(answer.errors.count, "error") %>
+                        prohibited this answer from being saved:
                         <ul>
-                            <% survey.errors.full_messages.each do |msg| %>
+                            <% answer.errors.full_messages.each do |msg| %>
                                 <li><strong><%= msg %></strong></li>
                             <% end %><br />
                         </ul>
@@ -20,9 +20,9 @@
 
         <section>
             <div class="row">
-                <%= f.label :name %><br />
-                <%= f.text_field :name, class: 'form-control' %>
-                <%= f.select_date Date.today, prefix: :dute_date %>
+                <%= f.label :answer_text %><br />
+                <%= f.text_field :answer_text, class: 'form-control' %>
+                <%= f.hidden_field :survey_question_id, value: @survey_question.id %>
             </div>
         </section>
 
