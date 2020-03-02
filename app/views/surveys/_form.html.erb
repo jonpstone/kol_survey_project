@@ -18,10 +18,12 @@
             </div>
         <% end %>
 
-        <div class="row">
-            <%= f.label :name %><br />
-            <%= f.text_field :name, class: 'form-control' %><br />
-        </div>
+        <section>
+            <div class="row">
+                <%= f.label :name %><br />
+                <%= f.text_field :name, class: 'form-control' %>
+            </div>
+        </section>
 
         <%= f.submit class: 'btn waves-effect waves-light' %>
     <% end %>

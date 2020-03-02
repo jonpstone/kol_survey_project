@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_29_200118) do
+ActiveRecord::Schema.define(version: 2020_03_02_032430) do
 
   create_table "survey_questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "question_text"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2020_02_29_200118) do
     t.bigint "survey_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "question_no"
     t.index ["survey_id"], name: "index_survey_questions_on_survey_id"
   end
 

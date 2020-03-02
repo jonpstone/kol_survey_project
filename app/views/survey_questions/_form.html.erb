@@ -21,6 +21,8 @@
         <section>
             <%= f.label :question_text %>
             <%= f.text_field :question_text, class: 'form-control' %>
+            <%= f.label "Question Number" %>
+            <%= f.number_field :question_no %>
             <%= f.hidden_field :survey_id, value: @survey.id %>
         </section>
 

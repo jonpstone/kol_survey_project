@@ -6,8 +6,8 @@
       <% if @survey.survey_questions.exists? %>
         <% @survey.survey_questions.each do |question| %>
           <li class="collection-item">
-            <%= link_to question.question_text, 
-                        edit_survey_survey_question_path(id: question.id) %>
+            <%= link_to("#{question.question_no}. #{question.question_text}", 
+                              edit_survey_survey_question_path(id: question.id)) %>
           </li>
         <% end %>
       <% else %>

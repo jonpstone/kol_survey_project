@@ -41,7 +41,7 @@ class SurveyQuestionsController < ApplicationController
 
 		def survey_question_params
 			params.require(:survey_question).permit(
-				:question_text, :fixed_question, :survey_id
+				:question_text, :fixed_question, :survey_id, :question_no
 			)
 		end
 end
