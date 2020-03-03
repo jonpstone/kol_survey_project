@@ -36,7 +36,7 @@ class SurveyQuestionsController < ApplicationController
 		end
 
 		def set_survey_question
-			@survey_question = SurveyQuestion.find(params[:survey_id])
+			@survey_question = SurveyQuestion.find(params[:id])
 		end
 
 		def survey_question_params

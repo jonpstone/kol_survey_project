@@ -9,7 +9,7 @@ class AnswersController < ApplicationController
 	def create
 		@answer = Answer.new(answer_params)
 		if @answer.save
-			redirect_to '/'
+			redirect_back(fallback_location: root_path)
 		else
 			render :new
 		end
@@ -19,7 +19,7 @@ class AnswersController < ApplicationController
 
 	def update
 		if @answer.update(answer_params)
-			redirect_to '/'
+			redirect_back(fallback_location: root_path)
 		else
 			render :edit
 		end
@@ -27,14 +27,14 @@ class AnswersController < ApplicationController
 
 	private
 
-		def set_answer
-			@answer = Answer.find(params[:survey_question_id])
-		end
-
 		def set_survey_question
 			@survey_question = SurveyQuestion.find(params[:survey_question_id])
 		end
 
+		def set_answer
+			@answer = Answer.find(params[:id])
+		end
+		
 		def answer_params
 			params.require(:answer).permit!
 		end

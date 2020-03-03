@@ -14,10 +14,10 @@
 						Due date: <%= survey.month %>/<%= survey.day %>/<%= survey.year %>
 					<% end %>
 					<%= 
-						link_to(
-							'Edit', 
+						link_to( 
+							'Edit survey', 
 							edit_survey_path(survey),
-							class: "btn-small waves-effect waves-light"
+							class: 'question-options',
 						) 
 					%>
 					<br />
@@ -31,7 +31,7 @@
 					link_to(
 						'Create Survey',
 						new_survey_path,
-						class: "btn-large waves-effect waves-light"
+						class: "btn waves-effect waves-light"
 					)
 				%>
 			</div>

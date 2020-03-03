@@ -33,6 +33,26 @@
             </label><br />
         </section>
 
+        <section>
+            <% if survey_question.answers.any? %>
+                <label>Answers for fixed question</label>
+                <ul>
+                    <% survey_question.answers.each do |answer| %>
+                        <li>
+                            <%= answer.answer_text %>
+                            <%= 
+                                link_to(
+                                    'Edit answer',
+                                    edit_survey_question_answer_path(survey_question, answer),
+                                    class: 'question-options'
+                                )
+                            %>
+                        </li>
+                    <% end %>
+                </ul>
+            <% end %>
+        </section>
+
         <%= f.submit class: 'btn waves-effect waves-light' %>
     <% end %>
 </div>
