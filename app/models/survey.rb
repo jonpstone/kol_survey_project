@@ -6,8 +6,6 @@ class Survey < ApplicationRecord
     validates :name, length: { in: 3..25 }
     validates :due_date, length: { is: 8 }
 
-    scope :ordered, -> { order(name: :desc) }
-
     def year
         date_arr = self.due_date.to_s.split('')
         date_arr.slice(0, 4).join('')

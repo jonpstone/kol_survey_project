@@ -3,7 +3,7 @@
 		<ul class="collection with-header">
 			<li class="collection-header"><h4>Surveys</h4></li>
 			<!-- list surveys -->
-			<% @surveys.ordered.each do |survey| %>
+			<% @surveys.each do |survey| %>
 				<li class="collection-item">
 					<%= 
 						link_to survey.name, 
