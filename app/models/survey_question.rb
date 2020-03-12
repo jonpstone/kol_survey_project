@@ -6,7 +6,5 @@ class SurveyQuestion < ApplicationRecord
     validates_presence_of :question_text, :question_no, scope: :survey_id
     validates :question_text, length: { in: 5..240 }
 
-    def self.ordered
-        order(:question_no).all
-    end
+    scope :ordered, -> { order(question_no: :asc) }
 end
